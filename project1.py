@@ -7,6 +7,9 @@ with open('project1.txt') as f:
 #Create list to hold all numbers
 totalnumlist = []
 
+#Create integer to hold total
+totalvalue = 0
+
 #Loop through lines
 for line in lines:
     #Loop through characters in line
@@ -34,6 +37,5 @@ for currentnum in totalnumlist:
         #Add numbers in list together
         totalvalue = totalvalue + int(currentnum)
 
-
+#Print final total
 print (totalvalue)
-    

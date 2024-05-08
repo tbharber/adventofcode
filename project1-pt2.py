@@ -1,5 +1,5 @@
-#Advent of code Project 1
-import time
+#Advent of code Project 1, part 2
+import re
 
 #Open text file of lines
 with open('project1.txt') as f:
@@ -8,42 +8,86 @@ with open('project1.txt') as f:
 #Create list to hold all numbers
 totalnumlist = []
 
+#Create integer to hold total
+totalvalue = 0
+
 #Loop through lines
 for line in lines:
-    #Find index's of all digits and number strings
+    #Create empty list for current line
+    currentlinenumber = []
+    currentlineindex = []
 
-    num1 = line.find('1')
-    num2 = line.find('2')
-    num3 = line.find('3')
-    num4 = line.find('4')
-    num5 = line.find('5')
-    num6 = line.find('6')
-    num7 = line.find('7')
-    num8 = line.find('8')
-    num9 = line.find('9')
+    # This secion finds the index number of each occurence of digits 1-9 and words one-nine and adds each occurence to the current list
+    # Created in format of [ [6,0], [7,7], [4,22], [7,23] ]
+    # For each sub list, first digit is the found number and second digit is the index
+    for m in re.finditer('1', line):
+        currentlinenumber.append(1)
+        currentlineindex.append(m.start())
+    for m in re.finditer('2', line):
+        currentlinenumber.append(2)
+        currentlineindex.append(m.start())
+    for m in re.finditer('3', line):
+        currentlinenumber.append(3)
+        currentlineindex.append(m.start())
+    for m in re.finditer('4', line):
+        currentlinenumber.append(4)
+        currentlineindex.append(m.start())
+    for m in re.finditer('5', line):
+        currentlinenumber.append(5)
+        currentlineindex.append(m.start())
+    for m in re.finditer('6', line):
+        currentlinenumber.append(6)
+        currentlineindex.append(m.start())
+    for m in re.finditer('7', line):
+        currentlinenumber.append(7)
+        currentlineindex.append(m.start())
+    for m in re.finditer('8', line):
+        currentlinenumber.append(8)
+        currentlineindex.append(m.start())
+    for m in re.finditer('9', line):
+        currentlinenumber.append(9)
+        currentlineindex.append(m.start())
+    for m in re.finditer('one', line):
+        currentlinenumber.append(1)
+        currentlineindex.append(m.start())
+    for m in re.finditer('two', line):
+        currentlinenumber.append(2)
+        currentlineindex.append(m.start())
+    for m in re.finditer('three', line):
+        currentlinenumber.append(3)
+        currentlineindex.append(m.start())
+    for m in re.finditer('four', line):
+        currentlinenumber.append(4)
+        currentlineindex.append(m.start())
+    for m in re.finditer('five', line):
+        currentlinenumber.append(5)
+        currentlineindex.append(m.start())
+    for m in re.finditer('six', line):
+        currentlinenumber.append(6)
+        currentlineindex.append(m.start())
+    for m in re.finditer('seven', line):
+        currentlinenumber.append(7)
+        currentlineindex.append(m.start())
+    for m in re.finditer('eight', line):
+        currentlinenumber.append(8)
+        currentlineindex.append(m.start())
+    for m in re.finditer('nine', line):
+        currentlinenumber.append(9)
+        currentlineindex.append(m.start())
 
-    str1 = line.find('one')
-    str2 = line.find('two')
-    str3 = line.find('three')
-    str4 = line.find('four')
-    str5 = line.find('five')
-    str6 = line.find('six')
-    str7 = line.find('seven')
-    str8 = line.find('eight')
-    str9 = line.find('nine')
+    #Get smallest number
+    smallestindexeddigit = currentlinenumber[currentlineindex.index(min(currentlineindex))]
 
-    print (num1, num2, num3, num4, num5, num6, num7, num8, num9, str1, str2, str3, str4, str5, str6, str7, str8, str9)
-    time.sleep(40)
+    #Get largest number
+    largestindexeddigit = currentlinenumber[currentlineindex.index(max(currentlineindex))]
 
-    
-    #Add current list of digits to total list
-    #totalnumlist.append(firstnum + secondnum)
+    #Add both numbers to list
+    totalnumlist.append(str(smallestindexeddigit) + str(largestindexeddigit))
 
 #Loop through list 
-#for currentnum in totalnumlist:
-        #Add numbers in list together
-        #totalvalue = totalvalue + int(currentnum)
+for currentnum in totalnumlist:
+    #Add numbers in list together
+    totalvalue = totalvalue + int(currentnum)
 
-
-#print (totalvalue)
-    
+#Print final total
+print (totalvalue)
