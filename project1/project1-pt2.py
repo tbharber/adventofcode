@@ -5,9 +5,6 @@ import re
 with open('project1.txt') as f:
     lines = f.readlines()
 
-#Create list to hold all numbers
-totalnumlist = []
-
 #Create integer to hold total
 totalvalue = 0
 
@@ -81,13 +78,8 @@ for line in lines:
     #Get largest number
     largestindexeddigit = currentlinenumber[currentlineindex.index(max(currentlineindex))]
 
-    #Add both numbers to list
-    totalnumlist.append(str(smallestindexeddigit) + str(largestindexeddigit))
-
-#Loop through list 
-for currentnum in totalnumlist:
-    #Add numbers in list together
-    totalvalue = totalvalue + int(currentnum)
+    #Add both numbers to total
+    totalvalue = totalvalue + int(str(smallestindexeddigit) + str(largestindexeddigit))
 
 #Print final total
 print (totalvalue)
