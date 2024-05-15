@@ -1,9 +1,8 @@
 #Advent of code Project 2
 import re
-import time
 
 #Open text file of lines
-with open('project2.txt') as f:
+with open('day2.txt') as f:
     lines = f.readlines()
 
 #Create dictionaries
@@ -61,12 +60,12 @@ for currentgame in allgames:
         elif foundcubes["green"] > possiblecubes["green"]:
             gameispossible = False
     
-    #If game is still possible after all pulls then add number of pulls to total
+    #If game is still possible after all pulls then add index number of game
     if gameispossible == True:
         possibleindex = possibleindex + int(currentgame)
         print ("Game " + currentgame + " possible")
     else:
         print ("Game " + currentgame + " impossible")
 
-#Print total number of pulls from possible games
-print (possibleindex)
+#Print total index of possible games
+print ("Index Total:" + str(possibleindex))

@@ -1,7 +1,7 @@
 #Advent of code Project 1
 
 #Open text file of lines
-with open('project1.txt') as f:
+with open('day1.txt') as f:
     lines = f.readlines()
 
 #Create list to hold all numbers

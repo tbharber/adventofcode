@@ -2,7 +2,7 @@
 import re
 
 #Open text file of lines
-with open('project1.txt') as f:
+with open('day1.txt') as f:
     lines = f.readlines()
 
 #Create integer to hold total
