@@ -1,6 +1,5 @@
 #Advent of code Project 2
 import re
-import time
 
 #Open text file of lines
 with open('day2.txt') as f:
