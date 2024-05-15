@@ -1,4 +1,4 @@
-#Advent of code Project 2
+#Advent of code Project 2, part 2
 import re
 
 #Open text file of lines

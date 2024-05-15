@@ -1,4 +1,4 @@
-#Advent of code Project 1
+#Advent of code Day 1
 
 #Open text file of lines
 with open('day1.txt') as f:
